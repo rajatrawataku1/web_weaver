@@ -15,7 +15,7 @@ export default function HistoryItem({
 }: IHistoryItem) {
   return (
     <div className="flex gap-4 font-sans">
-      <div className="bg-primaryDark w-4 h-4 rounded-full m-10"></div>
+      <div className="bg-primaryDark w-4 h-4 rounded-full m-2.5"></div>
       <div className="flex flex-col gap-2">
         <div className="text-3xl font-bold">{title}</div>
         <div className="text-2xl">{company}</div>
