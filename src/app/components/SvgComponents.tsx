@@ -235,7 +235,7 @@ export function LightModeLogo({ className }: { className: string }) {
                                         enable-background="new 0 0 100 100"
                                         height="114.17218292093025"
                                         width="151.05858048000002"
-                                        class="icon-icon-0"
+                                        className="icon-icon-0"
                                         data-fill-palette-color="accent"
                                         id="icon-0"
                                       >
