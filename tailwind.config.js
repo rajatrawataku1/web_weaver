@@ -32,8 +32,9 @@ module.exports = {
       textPrimary: '#212121',
       textSecondary: '#757575',
       textDisabled: '#9e9e9e',
+      textDisable2: '#737373',
       textSecondaryDarkMode: '#ffffff',
     },
   },
-  plugins: [],
+  plugins: [require('@tailwindcss/forms')],
 };
