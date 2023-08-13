@@ -17,6 +17,7 @@ module.exports = {
       sans: ['Lato', 'sans-serif'],
     },
     colors: {
+      transparent: 'transparent',
       black: '#000',
       defaultLight: '#FAFAFA',
       paperDark: '#424242',

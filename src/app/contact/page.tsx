@@ -2,7 +2,7 @@
 
 import Script from 'next/script';
 
-import { useCallback } from 'react';
+import { useCallback, useRef, useState } from 'react';
 import Image from 'next/image';
 import profilePic from '../../../public/assets/images/profilePhoto.png';
 
@@ -15,9 +15,13 @@ import {
 } from '../components/SvgComponents';
 import { EMAIL_JS } from '../constants';
 import Dots from '../../../public/assets/images/Dots.png';
+import Spinner from '../components/Spinner';
 
 function Contact() {
-  const formSubmitHandler = useCallback((e: React.FormEvent) => {
+  const [isFormLoading, setIsFormLoading] = useState(false);
+  const contactFormRef = useRef<React.ReactHTMLElement<HTMLFormElement>>();
+
+  const formSubmitHandler = useCallback(async (e: React.FormEvent) => {
     e.preventDefault();
     e.stopPropagation();
 
@@ -25,20 +29,25 @@ function Contact() {
     const from_name = e.target.name.value;
     const information = e.target['additional-details'].value;
 
-    window.emailjs
-      .send(EMAIL_JS.SERVICE_KEY, EMAIL_JS.TEMPLATE_ID, {
+    try {
+      setIsFormLoading(true);
+
+      await window.emailjs.send(EMAIL_JS.SERVICE_KEY, EMAIL_JS.TEMPLATE_ID, {
         from_name,
         information,
         sender_email,
-      })
-      .then(
-        function (response) {
-          console.log('SUCCESS!', response.status, response.text);
-        },
-        function (error) {
-          console.log('FAILED...', error);
-        }
+      });
+
+      contactFormRef.current?.reset?.();
+
+      alert(
+        'Thanks for contacting me. I will surely revert over the mail in next 24 hours.'
       );
+    } catch {
+      alert('Request not submitted. Try again!');
+    } finally {
+      setIsFormLoading(false);
+    }
   }, []);
 
   return (
@@ -94,16 +103,18 @@ function Contact() {
               <div className="w-1/4 text-4xl text-primaryDark font-bold">
                 Contact Me.
               </div>
-              <div className="w-3/4 text-4xl">
+              <div className="relative w-3/4 text-4xl">
                 <form
                   onSubmit={formSubmitHandler}
                   className="flex flex-col gap-4"
+                  ref={contactFormRef}
                 >
                   <label className="block">
                     <span className="text-textSecondary text-xl">
                       What is your name? *
                     </span>
                     <input
+                      disabled={isFormLoading}
                       required
                       type="text"
                       className="mt-1 block w-full rounded-sm border-textDisabled shadow-sm focus:border-primaryMain placeholder:text-textSecondary"
@@ -117,6 +128,7 @@ function Contact() {
                     </span>
                     <input
                       required
+                      disabled={isFormLoading}
                       type="email"
                       className="mt-1 block w-full rounded-sm border-textDisabled shadow-sm focus:border-primaryMain placeholder:text-textSecondary"
                       name="email"
@@ -129,6 +141,7 @@ function Contact() {
                     </span>
                     <textarea
                       required
+                      disabled={isFormLoading}
                       className="mt-1 block w-full rounded-sm border-textDisabled shadow-sm focus:border-primaryMain placeholder:text-textSecondary"
                       rows={3}
                       name="additional-details"
@@ -137,9 +150,14 @@ function Contact() {
 
                   <button
                     type="submit"
-                    className="bg-primaryMain text-paperLight text-sm py-2 w-1/2 rounded-sm"
+                    className="bg-primaryMain text-paperLight text-sm py-2 w-1/2 rounded-sm relative"
                   >
                     Send Message
+                    {isFormLoading && (
+                      <div className="absolute top-1/2 right-6 -translate-x-1/2 -translate-y-1/2">
+                        <Spinner className="h-6 w-6 border-paperLight" />
+                      </div>
+                    )}
                   </button>
                 </form>
               </div>
