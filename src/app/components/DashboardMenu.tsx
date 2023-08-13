@@ -12,10 +12,6 @@ const NAV_MENU_ITEMS = [
     link: '/resume',
   },
   {
-    name: 'About Me',
-    link: '/about-me',
-  },
-  {
     name: 'Contact',
     link: '/contact',
   },

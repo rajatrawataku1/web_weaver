@@ -14,7 +14,7 @@ function MenuItemComponent({ name, link }: { name: string; link: string }) {
     <Link
       className={`text-xl font-sans py-2 text-center font-black rounded-sm ${
         isActive
-          ? 'text-primaryMain bg-primaryLight text-opacity-50'
+          ? 'text-primaryMain bg-defaultLight text-opacity-70 shadow-sm'
           : 'text-opacity-90'
       }`}
       href={link}

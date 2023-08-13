@@ -27,7 +27,7 @@ import {
 export default function Resume() {
   return (
     <div className="flex flex-col w-full">
-      <div className="flex font-sans flex-col gap-4 bg-gradient-to-r from-secondaryMain to-secondaryLight text-paperLight mx-10 pl-14 py-10">
+      <div className="flex font-sans flex-col gap-4 bg-gradient-to-r from-secondaryMain to-primaryMain text-paperLight mx-10 pl-14 py-10">
         <div className="text-4xl">Rajat Rawat</div>
         <div className="text-2xl">Mid Level Frontend Engineer</div>
         <div className="text-l">
@@ -36,7 +36,7 @@ export default function Resume() {
         </div>
       </div>
 
-      <div className="flex font-sans gap-4 bg-gradient-to-r from-secondaryMain to-secondaryLight text-paperLight mx-10 pl-14 py-10">
+      <div className="flex font-sans gap-4 bg-gradient-to-r from-secondaryMain to-primaryMain text-paperLight mx-10 pl-14 py-10">
         <div className="flex flex-col w-1/2 gap-4">
           <div className="flex items-center gap-2">
             <MailIcon className="h-6 w-6 fill-paperLight" />
