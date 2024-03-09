@@ -8,7 +8,6 @@ import profilePic from '../../../public/assets/images/profilePhoto.png';
 
 import {
   GithubIcon,
-  LightModeLogo,
   LinkedInIcon,
   StackOverflowIcon,
   TwitterIcon,
@@ -17,17 +16,37 @@ import { EMAIL_JS } from '../constants';
 import Dots from '../../../public/assets/images/Dots.png';
 import Spinner from '../components/Spinner';
 
+declare global {
+  interface Window {
+    // coming from 'offline-js' package, attached at lib/initializers/offline/offline.js
+    emailjs: {
+      send: (
+        serviceKey: string,
+        templateId: string,
+        formData: {
+          from_name: string;
+          information: string;
+          sender_email: string;
+        }
+      ) => Promise<void>;
+      init: (publicKey: string) => {};
+    };
+  }
+}
+
 function Contact() {
   const [isFormLoading, setIsFormLoading] = useState(false);
-  const contactFormRef = useRef<React.ReactHTMLElement<HTMLFormElement>>();
+  const contactFormRef = useRef<HTMLFormElement>(null);
 
-  const formSubmitHandler = useCallback(async (e: React.FormEvent) => {
+  const formSubmitHandler = useCallback(async (e: any) => {
     e.preventDefault();
     e.stopPropagation();
 
-    const sender_email = e.target.email.value;
-    const from_name = e.target.name.value;
-    const information = e.target['additional-details'].value;
+    const formData = e.target as Record<string, any>;
+
+    const sender_email = formData.email.value;
+    const from_name = formData.name.value;
+    const information = formData['additional-details'].value;
 
     try {
       setIsFormLoading(true);
