@@ -78,8 +78,8 @@ function Contact() {
           window.emailjs.init(EMAIL_JS.PUBLIC_KEY);
         }}
       />
-      <div className="relative w-full h-full flex">
-        <div className="flex flex-col h-full w-1/3 font-sans items-center justify-center gap-20">
+      <div className="relative w-full h-full flex flex-col-reverse md:flex-row">
+        <div className="flex flex-col h-full md:w-1/3 font-sans items-center justify-center gap-20 my-10 md:my-0">
           <div className="flex flex-col items-center justify-center gap-4">
             <div className="text-6xl text-textDisable2 font-bold">
               Rajat Rawat
@@ -111,18 +111,18 @@ function Contact() {
         <Image
           src={Dots}
           alt="dots"
-          className="absolute h-1/2 w-1/4 bottom-0 right-0 opacity-50"
+          className="invisible md:visible absolute h-1/2 w-1/4 bottom-0 right-0 opacity-50"
         />
-        <div className="h-full w-2/3 flex flex-col font-sans justify-center">
-          <div className="relative flex w-4/5 h-3/5 bg-defaultLight drop-shadow-2xl py-20 gap-20">
-            <div className="absolute w-1/2 h-1/2 bg-gradient-to-r from-secondaryMain to-primaryMain -bottom-4  pl-4 pb-4 -left-4">
+        <div className="h-full md:w-2/3 flex flex-col font-sans justify-center">
+          <div className="relative flex md:w-4/5 md:h-3/5 bg-defaultLight drop-shadow-2xl pb-10 md:py-20 gap-20">
+            <div className="invisible md:visible display absolute w-full h-full md:w-1/2 md:h-1/2 bg-gradient-to-r from-secondaryMain to-primaryMain -bottom-4  pl-4 pb-4 md:-left-4">
               <div className="bg-defaultLight w-full h-full"></div>
             </div>
-            <div className="flex w-full px-10 gap-20 z-10">
-              <div className="w-1/4 text-4xl text-primaryDark font-bold">
+            <div className="flex flex-col md:flex-row w-full px-8 gap-4 md:px-10 md:gap-20 z-10">
+              <div className="md:w-1/4 text-4xl text-primaryDark font-bold">
                 Contact Me.
               </div>
-              <div className="relative w-3/4 text-4xl">
+              <div className="relative md:w-3/4 text-4xl">
                 <form
                   onSubmit={formSubmitHandler}
                   className="flex flex-col gap-4"
@@ -169,7 +169,7 @@ function Contact() {
 
                   <button
                     type="submit"
-                    className="bg-primaryMain text-paperLight text-sm py-2 w-1/2 rounded-sm relative"
+                    className="bg-primaryMain text-paperLight text-sm py-2 md:w-1/2 rounded-sm relative"
                   >
                     Send Message
                     {isFormLoading && (
