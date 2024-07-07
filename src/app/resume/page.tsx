@@ -27,7 +27,7 @@ import {
 export default function Resume() {
   return (
     <div className="flex flex-col w-full">
-      <div className="flex font-sans flex-col gap-4 bg-gradient-to-r from-secondaryMain to-primaryMain text-paperLight mx-10 pl-14 py-10">
+      <div className="flex font-sans flex-col gap-4 bg-gradient-to-r from-secondaryMain to-primaryMain text-paperLight md:mx-10 p-8 md:pl-14">
         <div className="text-4xl">Rajat Rawat</div>
         <div className="text-2xl">Mid Level Frontend Engineer</div>
         <div className="text-l">
@@ -36,12 +36,13 @@ export default function Resume() {
         </div>
       </div>
 
-      <div className="flex font-sans gap-4 bg-gradient-to-r from-secondaryMain to-primaryMain text-paperLight mx-10 pl-14 py-10">
-        <div className="flex flex-col w-1/2 gap-4">
+      <div className="flex flex-col md:flex-row font-sans gap-4 bg-gradient-to-r from-secondaryMain to-primaryMain text-paperLight md:mx-10 p-8 md:pl-14">
+        <div className="flex flex-col md:w-1/2 gap-6 md:gap-4">
           <div className="flex items-center gap-2">
             <MailIcon className="h-6 w-6 fill-paperLight" />
             <div className="font-medium">rajatrawataku@gmail.com</div>
           </div>
+
           <div className="flex items-center gap-2">
             <LocationIcon className="h-6 w-6 fill-paperLight" />
             <div className="font-medium">Bangalore, India</div>
@@ -52,7 +53,7 @@ export default function Resume() {
             <div className="font-medium">https://github.com/rajatrawataku1</div>
           </div>
         </div>
-        <div className="flex flex-col w-1/2 gap-4">
+        <div className="flex flex-col md:w-1/2 gap-6 md:gap-4">
           <div className="flex items-center gap-2">
             <MobileIcon className="h-6 w-6 fill-paperLight" />
             <div className="font-medium">+91-9168263282</div>
@@ -72,17 +73,17 @@ export default function Resume() {
         </div>
       </div>
 
-      <div className="flex gap-10 w-full p-10">
-        <div className="flex flex-col w-1/2 gap-10">
+      <div className="flex flex-col md:flex-row gap-10 w-full p-10">
+        <div className="flex flex-col md:w-1/2 gap-10">
           <div className="flex flex-col font-sans mb-10">
-            <div className="text-secondaryDark font-semibold text-2xl mb-10 ml-14 underline underline-offset-4">
+            <div className="text-secondaryDark font-semibold text-2xl mb-10 md:ml-14 underline underline-offset-4">
               WORK EXPERIENCE
             </div>
 
             <div className="flex flex-col gap-10 border-l-2 p-4">
               <div className="relative">
                 <div className="absolute bg-primaryDark w-7 h-7 rounded-full -left-8 top-1 border-4 border-paperLight" />
-                <div className="ml-10">
+                <div className="ml-2 md:ml-10">
                   <HistoryItem
                     title="Software Engineer (UI)"
                     company="Rippling"
@@ -103,7 +104,7 @@ export default function Resume() {
             <div className="flex flex-col gap-10 border-l-2 p-4">
               <div className="relative">
                 <div className="absolute bg-primaryDark w-7 h-7 rounded-full -left-8 top-1 border-4 border-paperLight" />
-                <div className="ml-10">
+                <div className="ml-2 md:ml-10">
                   <HistoryItem
                     title="UI Engineer II"
                     company="Flipkart Internet Private Limited"
@@ -125,7 +126,7 @@ export default function Resume() {
             <div className="flex flex-col gap-10 border-l-2 p-4">
               <div className="relative">
                 <div className="absolute bg-primaryDark w-7 h-7 rounded-full -left-8 top-1 border-4 border-paperLight" />
-                <div className="ml-10">
+                <div className="ml-2 md:ml-10">
                   <HistoryItem
                     title="UI Engineer I"
                     company="Flipkart Internet Private Limited"
@@ -145,14 +146,14 @@ export default function Resume() {
           </div>
 
           <div className="flex flex-col font-sans mb-10">
-            <div className="text-secondaryDark font-semibold text-2xl mb-10 ml-14 underline underline-offset-4">
+            <div className="text-secondaryDark font-semibold text-2xl mb-10 md:ml-14 underline underline-offset-4">
               EDUCATION
             </div>
 
             <div className="flex flex-col gap-10 border-l-2 p-4 w-full">
               <div className="relative">
                 <div className="absolute bg-primaryDark w-7 h-7 rounded-full -left-8 top-1 border-4 border-paperLight" />
-                <div className="ml-10">
+                <div className="ml-2 md:ml-10">
                   <EducationItem
                     courseName="Bachelor of Engineering (B.E), Computer Science & Engineering"
                     instituteName="Army Institute of Technology, Pune"
@@ -169,7 +170,7 @@ export default function Resume() {
             <div className="flex flex-col gap-10 border-l-2 p-4 w-full">
               <div className="relative">
                 <div className="absolute bg-primaryDark w-7 h-7 rounded-full -left-8 top-1 border-4 border-paperLight" />
-                <div className="ml-10">
+                <div className="ml-2 md:ml-10">
                   <EducationItem
                     courseName="Senior Secondary"
                     instituteName="Army Public School Raiwala"
@@ -186,7 +187,7 @@ export default function Resume() {
             <div className="flex flex-col gap-10 border-l-2 p-4 w-full">
               <div className="relative">
                 <div className="absolute bg-primaryDark w-7 h-7 rounded-full -left-8 top-1 border-4 border-paperLight" />
-                <div className="ml-10">
+                <div className="ml-2 md:ml-10">
                   <EducationItem
                     courseName="High School"
                     instituteName="Army Public School Raiwala"
@@ -202,7 +203,7 @@ export default function Resume() {
           </div>
         </div>
 
-        <div className="flex flex-col w-1/2 gap-10">
+        <div className="flex flex-col md:w-1/2 gap-10">
           <div className="flex flex-col font-sans mb-10">
             <div className="text-secondaryDark font-semibold text-2xl mb-10 underline underline-offset-4">
               PROJECT

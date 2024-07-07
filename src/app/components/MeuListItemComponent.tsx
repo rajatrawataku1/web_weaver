@@ -12,7 +12,7 @@ function MenuItemComponent({ name, link }: { name: string; link: string }) {
 
   return (
     <Link
-      className={`text-xl font-sans py-2 text-center font-black rounded-sm ${
+      className={`text-xl font-sans py-1 px-1 text-center font-black rounded-sm ${
         isActive
           ? 'text-primaryMain bg-defaultLight text-opacity-70 shadow-sm'
           : 'text-opacity-90'

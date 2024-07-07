@@ -13,8 +13,8 @@ import Link from 'next/link';
 export default function HomeCardComponent() {
   return (
     <div className=" w-full h-full flex flex-col">
-      <div className="text-paperLight font-sans w-full h-full bg-gradient-to-r from-secondaryMain to-primaryMain flex-col px-20 py-36 opacity-75">
-        <div className="mb-72">
+      <div className="text-paperLight font-sans md:w-full md:h-full bg-gradient-to-r from-secondaryMain to-primaryMain flex-col px-8 py-16 md:px-20 md:py-36 opacity-75">
+        <div className="mb-20 md:mb-72">
           <div className="text-paperLight text-4xl mb-3">Hello!</div>
           <div className="text-paperLight text-6xl mb-6">
             I am Rajat, Frontend Engineer
@@ -33,9 +33,9 @@ export default function HomeCardComponent() {
           </Link>
         </div>
 
-        <div className="flex items-center gap-10">
+        <div className="flex items-center gap-2 md:gap-10">
           <hr className="w-full" />
-          <div className="flex gap-10">
+          <div className="flex gap-4 md:gap-10">
             <GithubIcon className="fill-paperLight h-12 w-12" />
             <TwitterIcon className="fill-paperLight h-12 w-12" />
             <LinkedInIcon className="fill-paperLight h-12 w-12" />
